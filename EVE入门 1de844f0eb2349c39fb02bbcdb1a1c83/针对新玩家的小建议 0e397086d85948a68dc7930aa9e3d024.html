@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>针对新玩家的小建议</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0e397086-d859-48a6-8dc7-930aa9e3d024" class="page sans"><header><h1 class="page-title">针对新玩家的小建议</h1></header><div class="page-body"><h2 id="95b276db-1bd7-4438-a0e1-8e9460192715" class="">你应时刻牢记于心的建议</h2><h3 id="460da669-3865-48f3-bc6e-97172e1886e0" class="">不要开你爆不起的船</h3><p id="0c482e50-5c5f-469b-9afd-944286f4bc00" class="">这条规则可以说的上是EVE世界中最重要的一条规则。一旦你离开空间站，即使是在高安，你也有机会失去你所开的这艘船。所以不要开你爆不起的船。理论上你应该确保你能承受数次同样的损失。你可以为你的飞船投保，这样可以在被爆的时候回收一定的资金。但不要完全依赖保险。保险只会保障空船，而不是装备，改装件和货舱里的货物。如果你开的船越贵，那么被爆的风险越高。（由于保险是根据空船的材料费来确定保险额度，所以势力和T2舰船的保险额度并不会让人太满意）</p><p id="4544e874-7375-462c-84c2-53b76ec1229f" class="">通常来说，最好将你的船看作是大号消耗品（就和导弹和无人机一样），不要对待舰船就好像是你的生命或真爱一样，否则总有一天它们会变成一朵非常好看的烟花。</p><p id="8e653fff-d5df-497a-9207-4ad4f32782f0" class="">作为一条不变的规则，一条没有投保的空船将会赔付船体价值的40%，若是一条投保后的空船，那么将会赔付空船价值40%+你投保花费的两倍。所以如果你将要移动到高风险地区，则应确保它可以弥补你可能会损失的全装船成本。</p><h3 id="0d112d56-8387-4887-b7c0-b4bbecca2a64" class="">高安区不等于安全区</h3><p id="10903d32-0b58-4b22-becb-3262baab104b" class="">在你脑中，你或许认为“高安指的是你大概是安全的”或者是“高安就是安全区”。但不幸的是，这只是你的一厢情愿，在你出站后，你就已经将自己暴露在PVP下了。高安唯一能提供给你的是，让攻击者三思而后行。统合部的作用是惩罚攻击者，而不是保护你。你的安全完全取决于你，你的配装，以及你所采取的预防措施。很多损失都是因为缺乏简单的预防措施或不知所措导致的。如果你赌你自己在不采取预防措施的情况下也不会被爆，那你只是在增加你经历不必要损失的几率。</p><h3 id="7601a010-053a-4aa3-9d42-f9c335154b8b" class="">诈骗，偷窃和其他不道德的行为都是被允许的</h3><p id="909822d1-cfaf-4b13-8e13-99d4b2a4f997" class="">不同于其他游戏，EVE里并没有任何措施来防止诈骗，偷窃，欺骗等行为。正相反，游戏机制反而鼓励和奖励此类行为，且游戏官方不会对这种情况下的损失作任何补偿。</p><h3 id="336ce7f6-2bc7-4856-a0e6-ffeb3b5e7d48" class="">辅助技能非常重要</h3><p id="88f047de-2096-467d-a787-68f896b5d8e7" class="">就算你拥有开某艘船的最低技能，这不代表你应该开它，也不代表你可以开的很好。辅助技能可以帮助你提升你驾驶不同舰船的能力，所以不要小看它们。</p><p id="5a13864a-ff8c-41ba-aeb9-871130c6c4cd" class="">在新玩家中有一个非常常见的错误，就是应尽快换成到更大的舰级，这导致“越大越好”思维在萌新里占了上风。但是在EVE里，越大并不意味着越好，越大意味着你用来提升效率的时间会以指数级上升，耐心学习每一种船体是怎么用的。在PVP里，小船也可以击毁大船，因为小船的驾驶者拥有一套优秀的配置，足够的技能和经验。</p><h3 id="8d62625b-371b-4dce-8a20-9cb2ab1cc4ef" class="">不要单凭封面来论断某本书</h3><p id="77075c00-d1a8-4c27-8081-41a5e6770d66" class="">一个人物创建时间很晚并不代表它背后的玩家是个新手。很多玩家都有小号，有些玩家会用这些看上去很新的人物来麻痹其他人，有些人甚至会努力使他们的新人物看起来值得信赖，然后用来渗透某些新手团。</p><p id="ccd9d960-df8d-4a8c-b8d3-9db9e552bf42" class="">反之也成立，一个看起来创建时间很早的人物背后很有可能是一个萌新，他们有可能是AFK了很长时间，也有可能他们的人物是买来的。</p><h2 id="89a04843-801a-4782-b679-55afcd3999b7" class="">运输个人资产的小建议</h2><h3 id="dcdaa8e1-f94b-4c91-b0c9-91293e491625" class="">防范强暴</h3><p id="2d87df32-d201-4a65-b192-de256f029271" class="">永远假设你周围的玩家都知道你运输的是什么货物，在游戏里有一款装备叫船体扫描器，可以让其他人得知你货舱里装的是什么，有时你甚至都不知道别人扫描了你。这尤其重要，当你正打算去一个贸易中心时，有些人会扫描你的船舱来得知你的货舱里有没有值钱的物品。</p><p id="6e86217e-d836-4bcb-9a33-3ee122dec070" class="">假如你船舱里物品的价值大过他们强暴用船的价值，那么他们就会认为打爆你是值得的。在高安他们在打爆你的船后会被统合部击毁，你或许认为他们付出了代价，然而这些人往往还会开一个小号来拾取你被爆出来的物品。有些时候他们打爆你仅仅只是因为好玩。</p><p id="3e5266c1-90b5-44c9-8e43-74d09a0d4b50" class="">牢记统合部的作用是惩罚攻击者，而不是保护某人。根据所在星系的安全等级，统合部的响应时间也不尽相同。但是他们不会按时到达来防止你被摧毁，他们的目标也不是，统合部的作用只有惩罚攻击者并让他们付出代价，对你没多大帮助。</p><h3 id="b676eba6-3abf-445a-ae43-874a56386b6a" class="">不要使用除PLEX保险库之外的方法运输PLEX（伊甸币）</h3><p id="f5c65ca7-ef46-4bf7-b557-6d76d0797dcb" class="">永远不要将PLEX放在你的货舱里运输，PLEX在强暴者眼中是高价值目标，当然这里也没有理由放在货舱里运输。你可以使用PLEX保险库运输，把plex扔进plex保险库，到达目的地后再拿出来。你甚至可以远程移动你的PLEX到PLEX保险库里。</p><h3 id="960e850c-6545-466b-88ec-4581a2a5772d" class="">运输贵重资产</h3><p id="ae364ceb-19e7-42eb-8ecf-fa4bb7c4e630" class="">如果你想运输很多东西，或者是高价值物品（比如说技能注入器，但是技能注入器也可以远程使用）。你可以用不同的方法，这些方法要么耗时，要么耗钱，但是总比被爆掉好。</p><ol id="d235870b-3681-409f-9c4c-75b48fd43b46" class="numbered-list" start="1"><li>你可以多跑几次</li></ol><ol id="952091f5-9c24-4e09-81aa-a5dd0fdfb336" class="numbered-list" start="2"><li>你可以让你信任的朋友或团员开货舰帮你运输，货舰拥有极高的血量，所以普通的强暴者只能“望船兴叹”。但是你“信任”的朋友或团员也有可能会私吞了你的物品，或者是他们自己遇到了专门针对货舰的强暴队。</li></ol><ol id="6147ce01-2536-45a4-86e9-edf938504f3f" class="numbered-list" start="3"><li>在本地卖掉货物，然后在目的地再买。一般来说不会太贵（一定要先看价格）</li></ol><ol id="2c91a4c5-c672-43ac-81a8-7187a1919e48" class="numbered-list" start="4"><li>挂快递合同给高安快递服务或所在联盟的快递服务（如有），因为快递合同需要先支付给你保证金，就相当于快递服务商承担了被强暴的风险。</li></ol><h2 id="054beddc-aeee-427a-b86a-321bc071802f" class="">抛箱子情形的建议</h2><h3 id="90fbbcc7-5597-4e96-8341-2e756aebeb37" class="">钓鱼</h3><p id="fdbcd957-7675-46b6-bc59-c875fccd28c8" class="">有些人会在高安抛一个箱子，并命名“免费物品”（free items）。如果这个箱子的图标是黄色，那么如果你拿了箱子里的物品，箱子的主人就有权击毁你，在这种情况下，统合部不会干涉。这是一个广为人知的小技巧来引诱他人进行交战，如果你看到类似的“免费午餐”，那么极大可能是一个诱饵。</p><h3 id="d8d828d0-1389-4220-98d3-8a92f9a7e3ac" class="">高安偷矿和引诱攻击</h3><p id="629765c4-1096-458f-834b-1fd95307daf7" class="">假设说你正在进行抛矿作业，突然有个人跳进来随机拿了一件物品，实际上你对此无能为力，因为就算对方成为了嫌犯（你可以打他了），这也有可能是一个圈套，对方的行径不断引诱你对他开火，你如果开火了，对方就可以合法攻击你。他会比你更有准备，也可能会有帮手来帮他。最后你会受到损失。</p><h2 id="1369920a-09a2-40a0-a43a-ad1ecc96d8b1" class="">跑路建议</h2><h3 id="0a74d288-1057-4160-b450-f1410b489ea9" class="">不要使用自动导航</h3><p id="5bc99693-0f32-4708-86ad-faecb678c049" class="">自动导航指的是系统依照你所设定的航线自动航行，这会比手动操作慢很多，这可以解放你的双手，但也是很危险的行为。当你启用自动导航时，你将会跳到下一个星门12km处，然后缓慢航行至星门2500米半径内。在其他玩家看来，你很显然没在电脑前或正在忙其他事情，总之就是没有关注游戏界面。所以自动导航会比你手动跳0米要慢很多，这给了强暴者大量的机会。所以大多数人采取的方法是设定航线，但是手动操作飞船沿着自动导航路径跳0m。如果你坚持自动导航，那么你应确保你的自动导航路线远离主要贸易路线（最短航线）并在进出贸易中心星系和进出贸易中心空间站时使用手动操作。</p><p id="ea34163b-c4c0-4fa2-a041-7ba8c51c911e" class="">当然当目的地是空间站时，自动导航也会跳到距离空间站12km处，然后以龟速爬过去。显然这也是很危险的。所以只有在你设置了位于目的地空间站的一个0米坐标时使用自动导航。当到达目标星系时，取消自动导航，手动跃迁至0米，在起跳的时候激活自动导航。这样自动导航便会自动入港。</p><h3 id="e43cbc07-a513-4cda-8112-23ef48b6b4c6" class="">善用规避星系列表</h3><p id="854a3724-9641-4f7c-a831-06f30f91d1c8" class="">自动导航同样也拥有一个列表，在列表中的星系将会被自动规避（除非你主动设置这些星系为路径点或者是目的地）</p></div></article></body></html>
